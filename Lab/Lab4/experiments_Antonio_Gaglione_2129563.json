@@ -1,0 +1,51 @@
+{
+    "experiment_0": {
+        "model": "distilbert-base-uncased",
+        "hyperparameters": {
+            "Learning rate": "0.00001",
+            "Warmup ratio": "0.06",
+            "Weight decay": "0.1"
+        },
+        "f1_score": "0.9476",
+        "precision": "0.9694",
+        "recall": "0.9268",
+        "description": "Experiment 0 uses a conservative learning rate and moderate weight decay to ensure stability and avoid overfitting. This configuration prioritizes gradual learning and robustness."
+    },
+    "experiment_1": {
+        "model": "distilbert-base-uncased",
+        "hyperparameters": {
+            "Learning rate": "0.00003",
+            "Warmup ratio": "0.06",
+            "Weight decay": "0.5"
+        },
+        "f1_score": "0.9550",
+        "precision": "0.9795",
+        "recall": "0.9317",
+        "description": "Experiment 1 increases the learning rate for faster convergence and applies a high weight decay to strongly regularize the model. This setup aims to generalize well by avoiding overfitting."
+    },
+    "experiment_2": {
+        "model": "distilbert-base-uncased",
+        "hyperparameters": {
+            "Learning rate": "0.00005",
+            "Warmup ratio": "0.1",
+            "Weight decay": "0.02"
+        },
+        "f1_score": "0.9726",
+        "precision": "0.9949",
+        "recall": "0.9512",
+        "description": "Experiment 2 adopts a more aggressive learning strategy, combining a high learning rate with minimal regularization and longer warmup. This allows the model to adapt quickly and thoroughly to the training data."
+    },
+    "final_prediction": {
+        "model": "distilbert-base-uncased",
+        "experiment_chosen": "experiment_0 or experiment_1 or experiment_2",
+        "hyperparameters": {
+            "Learning rate": "0.00005",
+            "Warmup ratio": "0.1",
+            "Weight decay": "0.02"
+        },
+        "f1_score": "0.9854",
+        "precision": "0.9902",
+        "recall": "0.9806",
+        "description": "Final prediction is based on experiment 2, which showed the best performance on the validation set. The model achieved excellent results on the test set, demonstrating strong generalization and high reliability."
+    }
+}
